@@ -16,12 +16,10 @@ public class MidTermProject {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        
-        System.out.println("HELLO WORLD! Testing first commit");
-                
-        
-        
+
+        Main_Page m = new Main_Page();
+        m.setVisible(true);
+
     }
-    
+
 }
