@@ -22,7 +22,6 @@ public class MAIN extends javax.swing.JFrame {
         RubricSystem RS = RubricSystem.getInstance();
         RS.loadData();
         
-        
     }
 
     /**
@@ -204,17 +203,17 @@ public class MAIN extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(254, 254, 254)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(211, 211, 211))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         jTabbedPane7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -293,6 +292,7 @@ public class MAIN extends javax.swing.JFrame {
             }
         });
 
+        jButton19.setBackground(new java.awt.Color(255, 75, 95));
         jButton19.setText("Search");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -376,22 +376,22 @@ public class MAIN extends javax.swing.JFrame {
         jTable2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Sr.#", "Subject Code", "Subject Title", "Credit Hours", "Type", "CLOS", "Assesments", "Rubrics", "Actions"
+                "Sr.#", "Subject Code", "Subject Title", "Credit Hours", "Type", "CLOS", "Assesments"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, true, true, true, true, false, true, true, true
+                true, true, true, true, true, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -401,6 +401,7 @@ public class MAIN extends javax.swing.JFrame {
         jTable2.setCellSelectionEnabled(true);
         jTable2.setDoubleBuffered(true);
         jScrollPane2.setViewportView(jTable2);
+        jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         jButton15.setBackground(new java.awt.Color(255, 75, 85));
         jButton15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -471,6 +472,8 @@ public class MAIN extends javax.swing.JFrame {
         );
 
         jTabbedPane7.addTab("     Course     ", jPanel3);
+
+        jPanel5.setBackground(new java.awt.Color(30, 50, 55));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -666,6 +669,8 @@ public class MAIN extends javax.swing.JFrame {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
+        AddSubject AS = new AddSubject();
+        AS.setVisible(true);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -689,7 +694,7 @@ public class MAIN extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+        
         AddStudent AS = new AddStudent();
         AS.setVisible(true);
         // TODO add your handling code here:
@@ -711,7 +716,7 @@ public class MAIN extends javax.swing.JFrame {
             // object[4] = RS.getStdList().get(i).getRegNo();
             model.addRow(object);
         }
-
+        
 
     }//GEN-LAST:event_jButton19ActionPerformed
 

@@ -22,10 +22,12 @@ public class RubricSystem {
     private static RubricSystem instance;
 
     private List<Student> stdList;
+    private List<Course> CourseList;
     Student s;
 
     private RubricSystem() {
         stdList = new ArrayList<Student>();
+        CourseList = new ArrayList<Course>();
 
     }
 
@@ -36,6 +38,14 @@ public class RubricSystem {
             instance = new RubricSystem();
         }
         return instance;
+    }
+
+    public List<Course> getCourseList() {
+        return CourseList;
+    }
+
+    public void setCourseList(List<Course> CourseList) {
+        this.CourseList = CourseList;
     }
 
     public void addStudent(Student s) {
@@ -86,17 +96,17 @@ public class RubricSystem {
         boolean flag = false;
         try {
 
-            FileWriter writefile = new FileWriter("Student.txt");
+            FileWriter fr = new FileWriter("Student.txt");
 
             for (int i = 0; i < list.size(); i++) {
 
                 Student s = new Student();
                 s = list.get(i);
 
-                writefile.write(s.getFirstName() + "," + s.getLastName() + "," + s.getRegNo() + "," + s.getEmail() + "," + s.getSection() + "," + s.getPhoneNumber() + "\n");
+                fr.write(s.getFirstName() + "," + s.getLastName() + "," + s.getRegNo() + "," + s.getEmail() + "," + s.getSection() + "," + s.getPhoneNumber() + "\n");
                 flag = true;
             }
-            writefile.close();
+            fr.close();
 
         } catch (IOException ex) {
             System.out.println("An error occured! File Not Found");
@@ -114,9 +124,9 @@ public class RubricSystem {
             BufferedReader br = new BufferedReader(fr);
             //   Scanner sc = new Scanner(readFile);
 
-            String inFromFile = br.readLine();
-            for (int i = 0; inFromFile != null; i++) {
-                String[] arr = inFromFile.split(",");
+            String inputFromFile = br.readLine();
+            for (int i = 0; inputFromFile != null; i++) {
+                String[] arr = inputFromFile.split(",");
 
                 Student s = new Student();
                 s.setFirstName(arr[0]);
@@ -126,7 +136,7 @@ public class RubricSystem {
                 s.setSection(arr[4]);
                 s.setPhoneNumber(arr[5]);
                 stdList.add(s);
-                inFromFile = br.readLine();
+                inputFromFile = br.readLine();
             }
             br.close();
             fr.close();
@@ -137,4 +147,46 @@ public class RubricSystem {
         }
 
     }
+//========================================COURSE FUNCTIONS========================
+
+    public void addCourse(Course c) {
+
+        CourseList.add(c);
+
+    }
+
+    public int searchCAourse(String courseId) {
+        int index = -1;
+        for (int i = 0; i < CourseList.size(); i++) {
+            if (CourseList.get(i).getCourseId().equals(courseId)) {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
+    }
+
+    public boolean deleteCourse(String courseId) {
+        int index = searchStudent(courseId);
+
+        if (index == -1) {
+            return false;
+        } else {
+            CourseList.remove(index);
+            return true;
+        }
+    }
+
+    public boolean updateCourse(String courseId, Course c) {
+        int index = searchStudent(courseId);
+
+        if (index == -1) {
+            return false;
+        } else {
+            CourseList.set(index, c);
+            return true;
+        }
+    }
+
 }
