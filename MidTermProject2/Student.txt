@@ -1,2 +1,11 @@
 Ali,Tariq,2020-CS-142,ali@gmail.com,A,03344879640
  Faizan ,jameel,2020-CS-160,alitariq12369@gmail.com,E,03344879641
+Hasnain,Bhatti,2020-CS-141,hasnain@gmail.com,C,03344879640
+Ali,Tariq,2020-CS-142,ali@gmail.com,A,03344879640
+ Faizan ,jameel,2020-CS-160,alitariq12369@gmail.com,E,03344879641
+Ali,Murtaza,2020-CS-114,aliM@gmail.com,E,03344879640
+Ali,Tariq,2020-CS-142,ali@gmail.com,A,03344879640
+ Faizan ,jameel,2020-CS-160,alitariq12369@gmail.com,E,03344879641
+Hasnain,Bhatti,2020-CS-141,hasnain@gmail.com,C,03344879640
+Ali,Tariq,2020-CS-142,ali@gmail.com,A,03344879640
+ Faizan ,jameel,2020-CS-160,alitariq12369@gmail.com,E,03344879641

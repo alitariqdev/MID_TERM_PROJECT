@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author Ali tariq
  */
-public class AddSubject extends javax.swing.JFrame {
+public class AddCourse extends javax.swing.JFrame {
 
     /**
      * Creates new form AddSubject
      */
-    public AddSubject() {
+    public AddCourse() {
         initComponents();
     }
 
@@ -197,18 +197,18 @@ public class AddSubject extends javax.swing.JFrame {
         RubricSystem.getInstance().addCourse(c);
 
         MAIN M = new MAIN();
-        AddSubject a = new AddSubject();
+        AddCourse a = new AddCourse();
         a.setVisible(false);
         M.setVisible(true);
 
-//        if (RS.saveData()) {
-        JOptionPane.showMessageDialog(null, "Subject Added Sucessfully");
-//        }
+        if (RS.saveCourseData(RS.getCourseList())) {
+            JOptionPane.showMessageDialog(null, "Subject Added Sucessfully");
+        }
 
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Incorrect Details! Add Again.");
-//
-//        }
+        else {
+            JOptionPane.showMessageDialog(null, "Incorrect Details! Add Again.");
+
+        }
     }//GEN-LAST:event_saveStdBtnActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -239,20 +239,21 @@ public class AddSubject extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddSubject.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddSubject.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddSubject.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddSubject.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddSubject().setVisible(true);
+                new AddCourse().setVisible(true);
             }
         });
     }
